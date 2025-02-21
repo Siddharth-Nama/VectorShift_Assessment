@@ -11,7 +11,8 @@ import requests
 from integrations.integration_item import IntegrationItem
 from typing import List
 from redis_client import add_key_value_redis, get_value_redis, delete_key_redis
-from integrations.utils import close_window_script, fetch_credientials
+from integrations.utils import close_window_script, fetch_credentials
+
 
 CLIENT_ID = 'XXX'
 CLIENT_SECRET = 'XXX'
@@ -73,7 +74,7 @@ async def oauth2callback_notion(request: Request):
 
 
 async def get_notion_credentials(user_id, org_id):
-    await fetch_credientials('notion',user_id=user_id, org_id=org_id)
+    await fetch_credentials('notion',user_id=user_id, org_id=org_id)
 
 
 def _recursive_dict_search(data, target_key):
